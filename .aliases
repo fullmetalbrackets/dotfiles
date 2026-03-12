@@ -24,11 +24,20 @@ alias x='clear'
 alias q='exit'
 alias hs='history'
 alias ap='ansible-playbook'
-alias play='ansible-playbook -i ~/ansible/hosts ~/ansible/playbooks/updates.yml'
 alias dc='sudo docker-compose up -d'
 alias myip='curl https://icanhazip.com'
 alias tun='sudo docker exec -it qbittorrent sh -c "curl https://icanhazip.com"'
 alias dnsleak='bash /home/ad/dnsleaktest.sh'
+# yarn
+alias y='yarn'
+alias yb='yarn build'
+alias ybp='yarn build && yarn preview --host'
+alias yd='yarn dev --host'
+alias ydf='yarn dev --host --force'
+alias yp='yarn preview --host'
+# astro
+alias yas='yarn astro sync'
+alias check='yarn astro check'
 
 function acp() {
   git add .
@@ -37,26 +46,6 @@ function acp() {
 }
 
 # Git short-cuts.
-alias g='git'
-alias gi='git init'
-alias ga='git add'
-alias gr='git rm'
-alias fetch='git fetch'
-alias pull='git pull'
-alias gs='git status --short'
-alias gd='git diff'
-alias gdis='git discard'
-# Git short-cuts.
-alias g='git'
-alias gi='git init'
-alias ga='git add'
-alias gr='git rm'
-alias fetch='git fetch'
-alias pull='git pull'
-alias gs='git status --short'
-alias gd='git diff'
-alias gdis='git discard'
-
 function gc() {
   args=$@
   git commit -m "$args"
@@ -66,14 +55,31 @@ function gca() {
   git commit --amend -m "$args"
 }
 
-alias gp='git push'
-
 function gcp() {
   title="$@"
   git commit -am $title && git push -u origin
 }
+
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gbd='git branch -D'
 alias gcl='git clone'
 alias gch='git checkout'
-alias gbr='git branch'
-alias gbrcl='git checkout --orphan'
-alias gbrd='git branch -D'
+alias gd='git diff'
+alias gdis='git discard'
+alias gf='git fetch'
+alias gi='git init'
+alias gl='git pull'
+alias gp='git push'
+alias gr='git rm'
+alias gs='git status --short'
+
+# Show a directory listing when using 'cd'
+function cd() {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && /bin/ls -lhF --time-style=long-iso --color=auto --ignore=lost+found
+}

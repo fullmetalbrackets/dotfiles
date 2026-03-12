@@ -28,9 +28,6 @@
 	changed = yellow bold
 	untracked = red bold
 
-[core]
-    editor = "nano"
-
 [delta]
 	features = line-numbers decorations
 	line-numbers = true
@@ -49,24 +46,5 @@
 	minus-empty-line-marker-style = normal normal
 	plus-empty-line-marker-style = normal normal
 	line-numbers-right-format = "{np:^4}│ "
-
-[github]
-    user = fullmetalbrackets
-
-[push]
-	default = simple
-
-[url "https://github.com/"]
-    insteadOf = gh:
-
-[url "https://gist.github.com/"]
-    insteadOf = gist:
-
-[web]
-    browser = google-chrome
-[commit]
-	gpgsign = true
-[gpg]
-	program = .gnupg
-
-
+[maintenance]
+	repo = /home/ad/Projects/blog
