@@ -46,5 +46,19 @@
 	minus-empty-line-marker-style = normal normal
 	plus-empty-line-marker-style = normal normal
 	line-numbers-right-format = "{np:^4}│ "
+
+[github]
+    user = fullmetalbrackets
+
+[url "https://github.com/"]
+    insteadOf = gh:
+
+[url "https://gist.github.com/"]
+    insteadOf = gist:
+
+[init]
+	defaultBranch = main
+
 [maintenance]
 	repo = /home/ad/Projects/blog
+	repo = /home/ad/Projects/startpage
