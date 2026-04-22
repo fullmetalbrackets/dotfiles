@@ -1,8 +1,5 @@
-# If using bash, place this file in ~/
-# If using zsh & oh-my-zsh, rename this file to aliases.zsh
-# and place in directory ~/.oh-my-zsh/custom
-
-alias ls='ls --color'
+alias l='ls -laF --color'
+alias ls='ls -aF --color'
 alias sup='sudo apt update'
 alias yup='sudo apt upgrade -y'
 alias up='sudo apt update && sudo apt full-upgrade -y'
@@ -38,6 +35,10 @@ alias yp='yarn preview --host'
 # astro
 alias yas='yarn astro sync'
 alias check='yarn astro check'
+# pnpm
+alias p='pnpm'
+alias pd='pnpm dev --host'
+alias pdf='pnpm dev --host --force'
 
 function acp() {
   git add .
@@ -81,5 +82,5 @@ function cd() {
     if [ $# -eq 0 ]; then
         new_directory=${HOME};
     fi;
-    builtin cd "${new_directory}" && /bin/ls -lhF --time-style=long-iso --color=auto --ignore=lost+found
+    builtin cd "${new_directory}" && /bin/ls -aF --color --ignore=lost+found
 }
